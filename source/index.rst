@@ -25,6 +25,7 @@ LiveCloud 帮助文档
    :maxdepth: 2
 
    ceph_howto.rst
+   calamari.rst
 
 
 .. topic:: 版权声明
