@@ -1,3 +1,4 @@
+===================
 使用saltstack部署ceph环境
 ===================
 
@@ -24,6 +25,7 @@
    ``Ceph-Deploy`` 配置较复杂，不适合 *LiveCloud* 快速部署应用；手动配置，命令繁多，
    容易出错。结合  **SaltStack** 具有集中部署的优点，特将二者整合，形成了 ``livecloud`` 的Ceph部署工具。
 
+----
 部署前提
 ----
 硬件及系统准备
@@ -38,6 +40,7 @@
 * 使用  ``lc_xenctl install kvmhost`` 安装kvm之后（如何初始化kvm主机，请参考相关文档） 
 * 准备一台主机或虚拟机作为 **Salt-Master** （安装**Salt-Master** 软件，提供repo，和ntp服务器等） 
 
+-------
 部署的基本步骤
 -------
 
@@ -120,6 +123,7 @@
       salt '*' kvm.pool                       # 配置kvm-pool
       salt '*' state.sls ceph.pyagexec        # 配置pyagexec
 
+----
 部署举例
 ----
 
@@ -137,7 +141,7 @@
    salt-master, 172.16.39.11,   ,10.33.39.11, CentOS7.0-x86_64 basic 
 
 salt-master安装
-+++++++++++++
+=============
 
 上传安装文件到 ``salt-master``虚拟机或服务器上，并解压缩tar包:
 
@@ -308,7 +312,7 @@ salt-master安装
    Generate in /opt/deployment-toolkit/ceph-deploy/pillar/ceph.sls
    
 安装salt-minion
-+++++++++++++
+=============
 
 完成 ``salt-master`` 安装完毕后，依次执行如下命令:
 
@@ -358,7 +362,7 @@ salt-master安装
 查看是否安装成功。
 
 认证minion节点
-++++++++++
+==========
 
 .. note::
 
@@ -395,7 +399,8 @@ salt-key 的基本用法如下：:
    # 拒绝所有 Unaccepted Keys 状态的minion
    salt-key -D
 
-.. note :: 
+.. note:: 
+
    如果使用 salt-key -L 看不到任何信息，请到每个 minion 节点上手动重启 minion 服务。或者执行
 
    .. sourcecode:: console
@@ -403,7 +408,7 @@ salt-key 的基本用法如下：:
       salt-ssh '*' -r 'systemctl restart salt-minion'
 
 配置ceph节点
-++++++++
+========
 
 正确配置minion节点之后，在master上执行:
 
@@ -467,7 +472,7 @@ salt-key 的基本用法如下：:
    salt '*' state.sls ceph.pyagexec
 
 ceph环境验证
-++++++++
+========
 
 在某个节点上执行如下命令，可以看到当前的ceph状态:
 
@@ -487,7 +492,7 @@ ceph环境验证
     6  1.00000             osd.6           up  1.00000          1.00000
 
 ceph模板的导入
-+++++++++
+=========
 
 ceph环境正确部署后，将模板文件qcow2格式的放在任意一台ceph节点上
 

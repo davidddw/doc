@@ -1,3 +1,4 @@
+==================
 使用Calamari监控ceph环境
 ==================
 
@@ -7,7 +8,7 @@
    对外提供了十分漂亮的web管理和监控界面，以及一套改进的REST API接口
    （不同于Ceph自身的REST API），在一定程度上简化了Ceph的管理。
 
-
+----
 系统架构
 ----
 
@@ -46,5 +47,14 @@
 #. cthulhu可以理解是Calamari Server的Service层，对上为API提供接口。
 
 #. calamari_clients是一套用户界面。
+
+----
+安装部署
+----
+
+.. sourcecode:: console
+
+   tar zxf calamari-el7.tar.gz
+   sh install.sh 
 
 

@@ -1,30 +1,31 @@
-.. livecloud documentation master file, created by
+.. 2Cloud documentation master file, created by
    sphinx-quickstart on Fri Jan 08 14:34:42 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-LiveCloud 帮助文档
-==============
+2Cloud 帮助文档
+===========
 
 .. topic:: **读者对象**
 
    本手册适用于以下人员:
    
-   * LiveCloud云服务管理平台租户 
+   * 2Cloud云服务管理平台租户 
    * 数据中心管理员 
    * 数据中心运维人员 
-   * LiveCloud技术支持人员 
-   * 希望了解LiveCloud产品功能的相关人员 
+   * 2Cloud技术支持人员 
+   * 希望了解2Cloud产品功能的相关人员 
 
 
 .. topic:: 使用说明
 
-   本手册适用于Livecloud 3.5版本，对于其他版本仅供参考。
+   本手册适用于2Cloud 4.1版本，对于其他版本仅供参考。
 
 .. toctree::
    :maxdepth: 2
 
    ceph_howto.rst
+   template.rst
    calamari.rst
 
 
